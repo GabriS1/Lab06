@@ -10,7 +10,6 @@ public class Citta {
 	private int counter = 0;
 	
 	
-	
 	public Citta(String nome) {
 		this.nome = nome;
 	}
@@ -76,6 +75,15 @@ public class Citta {
 	@Override
 	public String toString() {
 		return nome;
+	}
+	
+	public float setMedia() {
+		int somma=0;
+		for(Rilevamento ri : this.rilevamenti) {
+			somma+=ri.getUmidita();
+		}
+		
+		return (float) somma/this.rilevamenti.size();
 	}
 	
 
